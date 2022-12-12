@@ -47,3 +47,7 @@ stampa un messaggio appropriato sull’esito del controllo.
 
 const email = document.getElementById('email');
 const button = document.getElementById('button');
+
+//Creo lista email autorizzate
+
+const authorizedEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'paperino@alice.it','ciccio@live.it'];
