@@ -11,3 +11,7 @@ Stampiamo in pagina i due tiri e il risultato
 const userNumber = document.getElementById('user-number');
 const aiNumber = document.getElementById('ai-number');
 
+//Genero un numero random per ai e utente
+
+const userRandom = Math.floor(Math.random() * 6) + 1;
+const aiRandom = Math.floor(Math.random() * 6) + 1;
