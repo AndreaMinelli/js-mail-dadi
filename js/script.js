@@ -15,3 +15,8 @@ const aiNumber = document.getElementById('ai-number');
 
 const userRandom = Math.floor(Math.random() * 6) + 1;
 const aiRandom = Math.floor(Math.random() * 6) + 1;
+
+//Stampo in pagina i numeri estratti
+
+userNumber.innerText = `Ti è uscito il numero: ${userRandom}`;
+aiNumber.innerText = `L'IA ha estratto il numero: ${aiRandom}`;
