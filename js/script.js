@@ -47,7 +47,40 @@ stampa un messaggio appropriato sull’esito del controllo.
 
 const email = document.getElementById('email');
 const button = document.getElementById('button');
+const checkMessage = document.getElementById('check-message');
 
 //Creo lista email autorizzate
 
 const authorizedEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'paperino@alice.it','ciccio@live.it'];
+
+//Controllo che la mail inserita sia nell'elenco
+
+button.addEventListener('click', function(){
+    const userEmail = email.value.trim();
+
+    let alertType = 'alert-warning';
+    let alertSymbol = '<i class="fa-regular fa-circle-xmark me-3"></i>';
+    let message = 'La mail inserita non è autorizzata!';
+
+    for (let i = 0; i < authorizedEmail.length; i++){
+        
+        const checkedEmail = authorizedEmail[i];
+
+        if(userEmail === checkedEmail){
+            alertType = 'alert-success';
+            alertSymbol = '<i class="fa-regular fa-circle-check me-3"></i>';
+            message = ' La mail inserita è autorizzata!';
+        }
+    }
+
+    const alert = `
+    <div class="alert ${alertType} d-flex align-items-center" role="alert">
+        ${alertSymbol}
+        <div>
+            ${message}
+        </div>
+    </div>
+    `;
+    
+    checkMessage.innerHTML = alert;
+});
