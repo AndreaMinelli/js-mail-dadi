@@ -33,3 +33,17 @@ if (userRandom > aiRandom){
 }
 
 winner.innerText = message;
+
+//# ----------- SECONDO ESERCIZIO ----------
+
+/*
+Inventa una lista di email autorizzate
+Chiedi all’utente la sua email, con un piccolo form.
+controlla che sia nella lista di chi può accedere,
+stampa un messaggio appropriato sull’esito del controllo.
+*/
+
+//Targhettizzo gli elementi in pagina
+
+const email = document.getElementById('email');
+const button = document.getElementById('button');
