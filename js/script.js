@@ -58,19 +58,27 @@ const authorizedEmail = ['pippo@gmail.com', 'pluto@gmail.com', 'paperino@alice.i
 button.addEventListener('click', function(){
     const userEmail = email.value.trim();
 
+    let isAuthorized = false;
+
+    for (let i = 0; i < authorizedEmail.length && !isAuthorized; i++){
+        
+        const checkedEmail = authorizedEmail[i];
+        
+        if(userEmail === checkedEmail){   
+            isAuthorized = true;
+        }
+
+        console.log(userEmail, checkedEmail)
+    }
+
     let alertType = 'alert-warning';
     let alertSymbol = '<i class="fa-regular fa-circle-xmark me-3"></i>';
     let message = 'La mail inserita non è autorizzata!';
 
-    for (let i = 0; i < authorizedEmail.length; i++){
-        
-        const checkedEmail = authorizedEmail[i];
-
-        if(userEmail === checkedEmail){
-            alertType = 'alert-success';
-            alertSymbol = '<i class="fa-regular fa-circle-check me-3"></i>';
-            message = ' La mail inserita è autorizzata!';
-        }
+    if(isAuthorized){
+        alertType = 'alert-success';
+        alertSymbol = '<i class="fa-regular fa-circle-check me-3"></i>';
+        message = ' La mail inserita è autorizzata!';
     }
 
     const alert = `
